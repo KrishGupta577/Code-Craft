@@ -4,9 +4,9 @@ import { api } from "../../../../convex/_generated/api";
 import Link from "next/link";
 import { Blocks, Code2, Sparkles } from "lucide-react";
 import { SignedIn } from "@clerk/nextjs";
-import RunButton from "./RunButton";
-import LanguageSelector from "./LanguageSelector";
 import ThemeSelector from "./ThemeSelector";
+import LanguageSelector from "./LanguageSelector";
+import RunButton from "./RunButton";
 import HeaderProfileBtn from "./HeaderProfileBtn";
 
 async function Header() {
@@ -75,7 +75,7 @@ async function Header() {
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-3">
                         <ThemeSelector />
-                        <LanguageSelector />
+                        <LanguageSelector hasAccess={Boolean(convexUser?.isPro)} />
                     </div>
 
                     {!convexUser?.isPro && (
