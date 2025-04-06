@@ -5,7 +5,7 @@ import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { motion } from "framer-motion";
 import { Loader2, Play } from "lucide-react";
-import { api } from "../../../../convex/_generated/api";
+import { api } from "../../../../../convex/_generated/api";
 
 function RunButton() {
   const { user } = useUser();
@@ -33,7 +33,7 @@ function RunButton() {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={`
-        group relative inline-flex items-center gap-2.5 px-5 py-2.5
+        group relative inline-flex items-center gap-2.5 px-5 py-2.5 cursor-pointer
         disabled:cursor-not-allowed
         focus:outline-none
       `}

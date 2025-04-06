@@ -1,12 +1,12 @@
 import { SignInButton, useUser } from "@clerk/nextjs";
-import { Id } from "../../../../../convex/_generated/dataModel";
 import { useState } from "react";
 import { useMutation, useQuery } from "convex/react";
-import { api } from "../../../../../convex/_generated/api";
 import toast from "react-hot-toast";
 import { MessageSquare } from "lucide-react";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import { Id } from "../../../../../../convex/_generated/dataModel";
+import { api } from "../../../../../../convex/_generated/api";
 
 function Comments({ snippetId }: { snippetId: Id<"snippets"> }) {
   const { user } = useUser();

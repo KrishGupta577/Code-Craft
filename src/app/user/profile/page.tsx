@@ -3,7 +3,6 @@ import { useUser } from "@clerk/nextjs";
 import { usePaginatedQuery, useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { api } from "../../../convex/_generated/api";
 import NavigationHeader from "@/components/NavigationHeader";
 import ProfileHeader from "./_components/ProfileHeader";
 import { ChevronRight, Clock, Code, ListVideo, Loader2, Star } from "lucide-react";
@@ -13,6 +12,7 @@ import Link from "next/link";
 import CodeBlock from "./_components/CodeBlock";
 import StarButton from "@/components/StarButton";
 import ProfileHeaderSkeleton from "./_components/ProfileHeaderSkeleton";
+import { api } from "../../../../convex/_generated/api";
 
 const TABS = [
   {
@@ -84,9 +84,8 @@ function ProfilePage() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as "executions" | "starred")}
-                  className={`group flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all duration-200 relative overflow-hidden ${
-                    activeTab === tab.id ? "text-blue-400" : "text-gray-400 hover:text-gray-300"
-                  }`}
+                  className={`group flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all duration-200 relative overflow-hidden cursor-pointer ${activeTab === tab.id ? "text-blue-400" : "text-gray-400 hover:text-gray-300"
+                    }`}
                 >
                   {activeTab === tab.id && (
                     <motion.div
@@ -148,11 +147,10 @@ function ProfilePage() {
                             </div>
                             <div className="flex items-center gap-2">
                               <span
-                                className={`text-xs px-2 py-0.5 rounded-full ${
-                                  execution.error
+                                className={`text-xs px-2 py-0.5 rounded-full ${execution.error
                                     ? "bg-red-500/10 text-red-400"
                                     : "bg-green-500/10 text-green-400"
-                                }`}
+                                  }`}
                               >
                                 {execution.error ? "Error" : "Success"}
                               </span>
@@ -168,9 +166,8 @@ function ProfilePage() {
                           <div className="mt-4 p-4 rounded-lg bg-black/40">
                             <h4 className="text-sm font-medium text-gray-400 mb-2">Output</h4>
                             <pre
-                              className={`text-sm ${
-                                execution.error ? "text-red-400" : "text-green-400"
-                              }`}
+                              className={`text-sm ${execution.error ? "text-red-400" : "text-green-400"
+                                }`}
                             >
                               {execution.error || execution.output}
                             </pre>

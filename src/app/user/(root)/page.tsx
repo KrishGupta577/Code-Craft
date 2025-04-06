@@ -9,7 +9,7 @@ const page = () => {
                 <Header></Header>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <EditorPanel></EditorPanel>
-                    <OutputPanel></OutputPanel>
+                    <OutputPanel></OutputPanel> 
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 import { CodeEditorState } from "./../types/index";
-import { LANGUAGE_CONFIG } from "@/app/(root)/_constants";
+import { LANGUAGE_CONFIG } from "../app/user/(root)/_constants";
 import { create } from "zustand";
 import { Monaco, Editor } from "@monaco-editor/react";
 import * as monaco from 'monaco-editor';

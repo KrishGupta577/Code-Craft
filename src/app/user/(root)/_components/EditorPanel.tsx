@@ -1,13 +1,13 @@
 "use client";
-import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { useEffect, useState } from "react";
-import { defineMonacoThemes, LANGUAGE_CONFIG } from "../_constants";
 import { Editor } from "@monaco-editor/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CheckCircle, Copy, RotateCcwIcon, ShareIcon, TypeIcon } from "lucide-react";
 import { useClerk } from "@clerk/nextjs";
+import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import useMounted from "@/hooks/useMounted";
+import { defineMonacoThemes, LANGUAGE_CONFIG } from "../_constants";
 import { EditorPanelSkeleton } from "./EditorPanelSkeliton";
 import ShareSnippetDialog from "./ShareSnippetDialog";
 
@@ -74,12 +74,11 @@ function EditorPanel() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            {/* Font Size Slider */}
 
             {code && (
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-1.5 px-3 py-2 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] 
+                className="flex items-center gap-1.5 px-3 py-2 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] cursor-pointer
             rounded-lg ring-1 ring-gray-800/50 hover:ring-gray-700/50 transition-all"
               >
                 {isCopied ? (
@@ -95,6 +94,8 @@ function EditorPanel() {
                 )}
               </button>
             )}
+
+            {/* Font Size Slider */}
 
             <div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
               <TypeIcon className="size-4 text-gray-400" />
@@ -117,7 +118,7 @@ function EditorPanel() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleRefresh}
-              className="p-2 bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 ring-white/5 transition-colors"
+              className="p-2 bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 ring-white/5 transition-colors cursor-pointer"
               aria-label="Reset to default code"
             >
               <RotateCcwIcon className="size-4 text-gray-400" />
@@ -128,8 +129,8 @@ function EditorPanel() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setIsShareDialogOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r
-               from-blue-500 to-blue-600 opacity-90 hover:opacity-100 transition-opacity"
+              className="inline-flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r 
+               from-blue-500 to-blue-600 opacity-90 hover:opacity-100 transition-opacity "
             >
               <ShareIcon className="size-4 text-white" />
               <span className="text-sm font-medium text-white ">Share</span>

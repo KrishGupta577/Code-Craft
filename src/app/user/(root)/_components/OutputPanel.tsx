@@ -33,7 +33,7 @@ function OutputPanel() {
         {hasContent && (
           <button
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] 
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] cursor-pointer
             rounded-lg ring-1 ring-gray-800/50 hover:ring-gray-700/50 transition-all"
           >
             {isCopied ? (

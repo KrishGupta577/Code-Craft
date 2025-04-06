@@ -16,7 +16,9 @@ function HeaderProfileBtn() {
       </UserButton>
 
       <SignedOut>
-        <SignInButton />
+        <div className="cursor-pointer">
+          <SignInButton />
+        </div>
       </SignedOut>
     </>
   );

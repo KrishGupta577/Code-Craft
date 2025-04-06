@@ -2,15 +2,15 @@
 
 import { useQuery } from "convex/react";
 import { useParams } from "next/navigation";
-import { api } from "../../../../convex/_generated/api";
-import { Id } from "../../../../convex/_generated/dataModel";
 import NavigationHeader from "@/components/NavigationHeader";
 import { Clock, Code, MessageSquare, User } from "lucide-react";
 import { Editor } from "@monaco-editor/react";
-import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/app/(root)/_constants";
 import Comments from "./_components/Comments";
 import SnippetLoadingSkeleton from "./_components/SnippetLoadingSkeleton";
 import CopyButton from "./_components/CopyButton";
+import { Id } from "../../../../../convex/_generated/dataModel";
+import { api } from "../../../../../convex/_generated/api";
+import { defineMonacoThemes, LANGUAGE_CONFIG } from "../../(root)/_constants";
 
 function SnippetDetailPage() {
     const snippetId = useParams().id;

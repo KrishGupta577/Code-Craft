@@ -1,7 +1,6 @@
 "use client";
 
 import { useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
 import NavigationHeader from "@/components/NavigationHeader";
 
@@ -9,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
 import SnippetCard from "./_components/SnippetCard";
 import SnippetsPageSkeleton from "./_components/SnippetsPageSkeleton";
+import { api } from "../../../../convex/_generated/api";
 
 function SnippetsPage() {
   const snippets = useQuery(api.snippets.getSnippets);
@@ -105,7 +105,7 @@ function SnippetsPage() {
                 key={lang}
                 onClick={() => setSelectedLanguage(lang === selectedLanguage ? null : lang)}
                 className={`
-                    group relative px-3 py-1.5 rounded-lg transition-all duration-200
+                    group relative px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer
                     ${
                       selectedLanguage === lang
                         ? "text-blue-400 bg-blue-500/10 ring-2 ring-blue-500/50"
@@ -139,7 +139,7 @@ function SnippetsPage() {
               <div className="flex items-center gap-1 p-1 bg-[#1e1e2e] rounded-lg ring-1 ring-gray-800">
                 <button
                   onClick={() => setView("grid")}
-                  className={`p-2 rounded-md transition-all ${
+                  className={`p-2 rounded-md transition-all cursor-pointer ${
                     view === "grid"
                       ? "bg-blue-500/20 text-blue-400"
                       : "text-gray-400 hover:text-gray-300 hover:bg-[#262637]"
@@ -149,7 +149,7 @@ function SnippetsPage() {
                 </button>
                 <button
                   onClick={() => setView("list")}
-                  className={`p-2 rounded-md transition-all ${
+                  className={`p-2 rounded-md transition-all cursor-pointer ${
                     view === "list"
                       ? "bg-blue-500/20 text-blue-400"
                       : "text-gray-400 hover:text-gray-300 hover:bg-[#262637]"

@@ -1,6 +1,5 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { ConvexHttpClient } from "convex/browser";
-import { api } from "../../../../convex/_generated/api";
 import Link from "next/link";
 import { Blocks, Code2, Sparkles } from "lucide-react";
 import { SignedIn } from "@clerk/nextjs";
@@ -8,6 +7,7 @@ import ThemeSelector from "./ThemeSelector";
 import LanguageSelector from "./LanguageSelector";
 import RunButton from "./RunButton";
 import HeaderProfileBtn from "./HeaderProfileBtn";
+import { api } from "../../../../../convex/_generated/api";
 
 async function Header() {
     const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
@@ -53,7 +53,7 @@ async function Header() {
                     {/* Navigation */}
                     <nav className="flex items-center space-x-1">
                         <Link
-                            href="/snippets"
+                            href="/user/snippets"
                             className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
                 hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
                         >

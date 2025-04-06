@@ -2,7 +2,6 @@
 import { Snippet } from "@/types";
 import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
-import { api } from "../../../../convex/_generated/api";
 import { useState } from "react";
 
 import { motion } from "framer-motion";
@@ -11,6 +10,7 @@ import { Clock, Trash2, User } from "lucide-react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import StarButton from "@/components/StarButton";
+import { api } from "../../../../../convex/_generated/api";
 
 function SnippetCard({ snippet }: { snippet: Snippet }) {
     const { user } = useUser();
@@ -87,7 +87,7 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                                         <button
                                             onClick={handleDelete}
                                             disabled={isDeleting}
-                                            className={`group flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all duration-200
+                                            className={`group flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer
                                   ${isDeleting
                                                     ? "bg-red-500/20 text-red-400 cursor-not-allowed"
                                                     : "bg-gray-500/10 text-gray-400 hover:bg-red-500/10 hover:text-red-400"
